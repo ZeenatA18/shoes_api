@@ -1,7 +1,6 @@
 {
   "name": "shoes_api",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -24,5 +23,10 @@
     "express-session": "^1.17.3",
     "flash": "^1.1.0",
     "mocha": "^10.1.0"
-  }
+  },
+  "devDependencies": {
+    "eslint": "^8.27.0",
+    "eslint-plugin-react": "^7.31.10"
+  },
+  "description": ""
 }

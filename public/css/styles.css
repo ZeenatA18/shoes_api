@@ -6,73 +6,123 @@ span{
     color: var(--main-color);
 }
 
+/* body{ */
+    /* background-image: url(zzz.jpg); */
+   /* background-color: rgb(227, 245, 245); */
+/* } */
+
 section {
     padding: 1rem 5%;
     min-height: 100vh;
+    margin-top: 4rem;
 }
 
 .heading{
-   margin-top: 30px;
-   text-align: center;
-}
-
-.portfolio .box-container{
+    text-align: left;
     display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
 }
 
-.portfolio .box-container .box{
-    flex: 1 1 30rem;
-    height: 15rem;
-    position: relative;
-    overflow: hidden;
-    border: 1rem solid #fff;
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
-    background: #fff;
-    border-radius: .5rem;
+.bag{
+    margin-left: 60%;
+    margin-top: 30px;
 }
 
-.portfolio .box-container .box img{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    position: relative;
-    z-index: 1;
+.navbar {
+  overflow: hidden;
+  background-color: #333;
 }
 
-.portfolio .box-container .box:hover img{
-    height: 70%;
-    width: 70%;
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
-.portfolio .box-container .box h3{
-    position: absolute;
-    bottom: .5rem; left: 1rem;
-    font-size: 2.5rem;
-    color: #333;
-    text-transform: uppercase;
+.dropdown {
+  float: left;
+  overflow: hidden;
 }
 
-.portfolio .box-container .box .icons{
-    position: absolute;
-    top: 1rem; right: 1rem;
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 30px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
 }
 
-.portfolio .box-container .box .icons a{
-    display: block;
-    height: 4rem;
-    width: 4rem;
-    border-radius: .5rem;
-    background: #eee;
-    color: #333;
-    font-size: 1.7rem;
-    line-height: 4rem;
-    text-align: center;
-    margin-bottom: 1rem;
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
 }
 
-.portfolio .box-container .box .icons a:hover{
-     background: var(--main-color);
-     color: #fff;
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
 }
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* picture section */
+.gallery .box-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 15px;
+}
+
+.gallery .box-container .box{
+  flex: 10%;
+  height: 10rem;
+  position: relative;
+  overflow: hidden;
+  border: 1rem solid #fff;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+  background: #fff;
+  border-radius: .5rem;
+}
+
+.gallery .box-container .box img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+}
+
+.gallery .box-container .box:hover img{
+  height: 70%;
+  width: 70%;
+}
+
+/* .gallery .box-container .box h3{
+  position: absolute;
+  bottom: .5rem; left: 1rem;
+  font-size: 2.5rem;
+  color: #333;
+  text-transform: uppercase;
+} */

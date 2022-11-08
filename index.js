@@ -25,6 +25,31 @@ app.get('/', function(req, res){
     res.render('index')
 })
 
+// app.get('/api/shoes', function(req, res){
+
+// })
+
+// app.get('/api/shoes/brand/:brandname', function(req, res){
+    
+// })
+
+// app.get('/api/shoes/size/:size', function(req, res){
+    
+// })
+
+// app.get('/api/shoes/brand/:brandname/size/:size', function(req, res){
+    
+// })
+
+// app.get('/api/shoes/sold/:id', function(req, res){
+    
+// })
+
+// app.get('/api/shoes', function(req, res){
+    
+// })
+
+// eslint-disable-next-line no-undef
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, function () {
