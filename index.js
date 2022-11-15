@@ -1,57 +1,35 @@
-const express = require('express');
-const exphbs = require('express-handlebars')
-const bodyParser = require('body-parser')
-const flash = require('flash')
-const session = require('express-session');
-const app = express();
+const galleryTemplate = document.querySelector('.galleryTemplate');
+const gallery = Handlebars.compile(galleryTemplate.innerText);
+const galleryElem = document.querySelector('.gallery');
 
-app.engine('handlebars', exphbs.engine({ defaultLayout: 'main' }));
-app.set('view engine', 'handlebars');
+axios
+    .get("http://localhost:5000/")
+    .then(result => {
+        const gallery_results = result.data;
 
-app.use(session({
-    secret: "This is my long String that is used for session",
-    resave: false,
-    saveUninitialized: true
-}));
+        galleryElem.innerHTML = gallery({
+            gallery_results
+        })
+    })
 
-app.use(express.static('public'));
+const brand = document.querySelector('.brand');
+const price = document.querySelector('.price');
+const color = document.querySelector('.color');
+const size = document.querySelector('.size');
+const image = document.querySelector('.image');
+const stock = document.querySelector('.in_stock');
+const submit = document.querySelector('.submit');
 
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
-app.use(flash());
-
-app.get('/', function(req, res){
-    
-    res.render('index')
+submit.addEventListener('click', function (evt) {
+    evt.preventDefault();  //helpful when debugging
+    if (brand.value && price.value && color.value && size.value && image.value && stock.value) {
+        axios.post("http://localhost:5000/addDate", {
+            "brand": brand.value,
+            "price": price.value,
+            "color": color.value,
+            "size": size.value,
+            "in_stock": stock.value,
+            "image": image.value
+        })
+    }
 })
-
-// app.get('/api/shoes', function(req, res){
-
-// })
-
-// app.get('/api/shoes/brand/:brandname', function(req, res){
-    
-// })
-
-// app.get('/api/shoes/size/:size', function(req, res){
-    
-// })
-
-// app.get('/api/shoes/brand/:brandname/size/:size', function(req, res){
-    
-// })
-
-// app.get('/api/shoes/sold/:id', function(req, res){
-    
-// })
-
-// app.get('/api/shoes', function(req, res){
-    
-// })
-
-// eslint-disable-next-line no-undef
-const PORT = process.env.PORT || 3000;
-
-app.listen(PORT, function () {
-    console.log("App started at port:", PORT)
-});
